@@ -1,5 +1,6 @@
 package com.example.jetpackarchit
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
@@ -8,6 +9,7 @@ import androidx.databinding.DataBindingUtil
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import com.example.jetpackarchit.databinding.ActivityMainBinding
+import com.example.jetpackarchit.imagedownload.ImageDownloadActivity
 import com.example.jetpackarchit.viewModel.MainViewModel
 import com.example.jetpackarchit.viewModel.MainViewModelFactory
 
@@ -32,6 +34,11 @@ class MainActivity : AppCompatActivity() {
 //            binding.increment.text = it
 //        })
         binding.lifecycleOwner = this
+
+        binding.nextBtn.setOnClickListener{
+            val intent = Intent(this, ImageDownloadActivity::class.java)
+            startActivity(intent)
+        }
 
     }
 
